@@ -1,0 +1,269 @@
+<html lang="en">
+<head>
+  
+    <title>LoginScreen</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.html">
+    <style media="screen">
+      *,
+      *:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #afa9e0;
+}
+.background{
+    width: 480px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 570px;
+    width: 800px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        #1845ad,
+        #1799f0
+    );
+    left: -309px;
+    top: -167px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #d37f0a
+    );
+    right: -300px;
+    bottom: -100px;
+}
+form{
+    height: 650px;
+    width: 400px;
+    background-color: rgba(90, 85, 85, 0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(143, 132, 132, 0.068);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+button{
+    margin-top: 50px;
+    width: 200;
+    z-index: 1;
+    background-color: #25dfd5;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.social{
+  margin-top: 30px;
+  display: flex;
+}
+.social div{
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255,255,255,0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover{
+  background-color: rgba(255,255,255,0.47);
+}
+.social .fb{
+  margin-left: 850px;
+  margin-top:600px;
+}
+.social i{
+  margin-right: 4px;
+}
+/* .social i{
+  margin-right: 4px;
+} */
+
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form action="connect.php"
+    method="POST">
+        <h3 style="margin-top: -30px;">AW Technologies</h3>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                        <main class="firstFunctionality">
+                            <form action=https://formspree.io/f/xvojaqzr
+                            method="POST">
+                                <input type="text" value="" name="Username" placeholder="Username" id="Username" required>
+                                <input type="text" value="" name="Firstname" placeholder="First Name" id="firstName" required>
+                                <input type="text" value="" name="Lastname" placeholder="Last name" id="lastName" required>
+                                <input type="text" value="" name="Email" placeholder="Email" id="Email" required>
+                                <input type="text" value="" name="Password" placeholder="Password" id="passWord" required>
+                                <input type="text" value="" name="Confirm Password" placeholder=" Confirm Password" id="confirmPassword" required>
+                            </form>
+                        </main>
+                </div>
+            </div>
+        </div>
+
+        <!-- <button style="margin-top: -44px;" id="login">Log In</button> -->
+        <div class="social">
+          <!-- <button class="go"></i>Sign in</button> -->
+          <button class="fb" type="submit" id="firstPage">Create Account</button>
+        </div>
+    </form>
+    <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+<script>
+  
+  let getCreateButton = document.getElementById('firstPage');
+  
+// let userName = document;
+  getCreateButton.addEventListener('click', (e)=>{
+    e.preventDefault();
+    console.log('click');
+   
+
+    let getUserName = document.getElementById('Username').value;
+    let firstName = document.getElementById('firstName').value;
+    let lastName = document.getElementById('lastName').value;
+    let getEmail = document.getElementById('Email').value;
+    let getPassword = document.getElementById('passWord').value;
+    let getConfirmPassword = document.getElementById('confirmPassword').value;
+
+    localStorage.setItem("Username", getUserName);
+    localStorage.setItem("Firstname", firstName);
+    localStorage.setItem("Lastname", lastName);
+    localStorage.setItem("Email", getEmail);
+    localStorage.setItem("Password", getPassword);
+    localStorage.setItem("ConfirmPassword", getConfirmPassword);
+
+    // let createProfile = '';
+
+    // if(getUserName > 1){
+    //     console.log(getUserName);
+        
+    // }else(
+    //     console.log('Must enter Username')
+    // )
+    
+
+    
+    // document.get('/createAccount.html', (req,res)=>{
+    //     res.sendFile('This is data')
+    // })
+
+
+        // console.log(username)
+    // let grabUser = document.getElementById('Username').value;
+    // if(grabUser > 1){
+    //     localStorage.setItem('Username', grabUser)
+    // }
+    // console.log(grabUser);
+    //     if(grabUser> 1){
+    //      console.log('Your username is' + grabUser)
+    //  }else{
+    //     console.log('Enter Username');
+    //  }
+    
+
+    })
+
+    console.log("Create an object")
+    const createUserIdentification = {
+        id : '',
+        getUserName : ''
+    }
+   
+</script>
+    <!-- <script>
+         let grabUser = document.getElementById('Username');
+
+         console.log(grabUser);
+
+
+         let createAccount = document.getElementById('firstPage');
+         createAccount.addEventListener('click', (e)=>{
+            e.preventDefault();
+            console.log(createAccount)
+            // console.log(grabUser.value)
+            let getUserName = document.getElementById('Username').value;
+            let getFirstName = document.getElementById('firstName').value;
+            let getLastName = document.getElementById('lastName').value;
+            let getEmail = document.getElementById('Email').value;
+            let getPassword = document.getElementById('passWord').value;
+            let getConfirmPassword = document.getElementById('confirmPassword').value;
+
+            let createUserProfile = localStorage.setItem("Username", getUserName);
+            let createFirstName = localStorage.setItem("Username", getFirstName);
+            let createLastName = localStorage.setItem("Username", getLastName);
+            let createEmail = localStorage.setItem("Username", getEmail);
+            let createPassword = localStorage.setItem("Username", getPassword);
+            let createConfirmPassword = localStorage.setItem("Username", getConfirmPassword);
+
+            console.log(createUserProfile,createFirstName,createLastName)
+        
+         })
+
+         
+    </script> -->
+</body>
+</html>
